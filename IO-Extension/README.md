@@ -1,5 +1,7 @@
 # emPC-A/iMX6 IO-Extension Library (8 digital IO, 4 analog In, 4 analog Out)
 
+you can import this library using the export file: "Device.Plc Logic.Application.POU_DIGANALOGIO.export" 
+
 ### Usage
 ```
 io( digout:=digout, digin=>digin, error=>err, aout1:=aout[1], aout2:=aout[2], aout3:=aout[3], aout4:=aout[4], ain1=>ain[1], ain2=>ain[2], ain3=>ain[3], ain4=>ain[4] );
