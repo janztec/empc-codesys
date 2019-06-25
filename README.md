@@ -1,2 +1,2 @@
-# empc-aimx6-codesys
-Janz Tec AG emPC-A/iMX6 CODESYS
+# empc-codesys
+Janz Tec AG emPC-X and emPC-A/iMX6 CODESYS example projects
