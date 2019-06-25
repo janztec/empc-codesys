@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DeviceDescription xmlns="http://www.3s-software.com/schemas/DeviceDescription-1.0.xsd" xmlns:ts="http://www.3s-software.com/schemas/TargetSettings-0.1.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Types namespace="localTypes">
+		<!-- example for bitfield -->
+		<BitfieldType basetype="std:BYTE" name="TBYTE">
+			<Component identifier="Bit0" type="std:BOOL">
+				<Default />
+				<VisibleName name="local:">Bit0</VisibleName>
+			</Component>
+			<Component identifier="Bit1" type="std:BOOL">
+				<Default />
+				<VisibleName name="local:">Bit1</VisibleName>
+			</Component>
+			<Component identifier="Bit2" type="std:BOOL">
+				<Default />
+				<VisibleName name="local:">Bit2</VisibleName>
+			</Component>
+			<Component identifier="Bit3" type="std:BOOL">
+				<Default />
+				<VisibleName name="local:">Bit3</VisibleName>
+			</Component>
+			<Component identifier="Bit4" type="std:BOOL">
+				<Default />
+				<VisibleName name="local:">Bit4</VisibleName>
+			</Component>
+			<Component identifier="Bit5" type="std:BOOL">
+				<Default />
+				<VisibleName name="local:">Bit5</VisibleName>
+			</Component>
+			<Component identifier="Bit6" type="std:BOOL">
+				<Default />
+				<VisibleName name="local:">Bit6</VisibleName>
+			</Component>
+			<Component identifier="Bit7" type="std:BOOL">
+				<Default />
+				<VisibleName name="local:">Bit7</VisibleName>
+			</Component>
+		</BitfieldType>
+	</Types>
+	<Strings namespace="local">
+		<Language lang="en">
+			<String identifier="ModelName">BO_EPC_IO001</String>
+			<String identifier="DeviceDescription"></String>
+			<String identifier="VendorName">Janz Tec AG</String>
+			<String identifier="typename">boepcio001_With_Lib</String>
+			<String identifier="typedescription">
+		  A device that includes libs and automatically generates some FB instances from this libs.
+			</String>
+		</Language>
+	</Strings>
+	<Device hideInCatalogue="false">
+		<DeviceIdentification>
+			<Type>40100</Type>
+			<Id>1096 0777</Id>
+			<Version>3.5.11.0</Version>
+		</DeviceIdentification>
+		<DeviceInfo>
+			<Name name="local:ModelName">BO_EPC_IO001</Name>
+			<Description name="local:DeviceDescription"></Description>
+			<Vendor name="local:VendorName">Janz Tec AG</Vendor>
+			<OrderNumber>???</OrderNumber>
+		</DeviceInfo>
+		<Connector moduleType="257" interface="Common.PCI" role="child" explicit="false" connectorId="1" hostpath="-1">
+			<InterfaceName name="local:PCI">PCI-Bus</InterfaceName>
+			<Slot count="1" allowEmpty="false"></Slot>
+		</Connector>
+		<Connector moduleType="40100" interface="MyCompany:Internal" role="parent" explicit="false" connectorId="2" hostpath="1">
+			<InterfaceName name="local:DP">Internal</InterfaceName>
+			<Var max="125" ></Var>
+			<HostParameterSet>
+				<Parameter ParameterId="393218" type="std:STRING">
+					<Attributes channel="none" download="true" functional="false" offlineaccess="write" onlineaccess="read" />
+					<Default>'Janz Tec AG'</Default>
+					<Name name="local:Id393218">Vendor</Name>
+					<Description name="local:Id393218.Desc">Vendor of the device</Description>
+				</Parameter>
+				<Parameter ParameterId="393219" type="std:STRING">
+					<Attributes channel="none" download="true" functional="false" offlineaccess="write" onlineaccess="read" />
+					<Default>'BO_EPC_IO001'</Default>
+					<Name name="local:Id393219">ModelName</Name>
+					<Description name="local:Id393219.Desc">Model name of the device</Description>
+				</Parameter>
+        
+        <Parameter ParameterId="393220" type="std:DWORD">
+					<Attributes channel="none" download="true" functional="false" offlineaccess="write" onlineaccess="read" />
+					<Default>0</Default>
+					<Name name="local:Id393220">ixbus16bitmemoryoffset</Name>
+					<Description name="local:Id393220.Desc">offset in bytes from beginning of 16bit memory space. default value of 0 is in most cases recommended. other value is required if BO-EPC-IO001 is not the first ix bus card, or multiple cards are installed.</Description>
+				</Parameter>
+        
+
+				<Parameter ParameterId="1000" type="localTypes:TBYTE">
+					<Attributes channel="input"/>
+					<Default/>					
+					<Name name="local:in1">digital inputs</Name>
+				</Parameter>
+				<Parameter ParameterId="1001" type="std:REAL">
+					<Attributes channel="input"/>
+					<Default>0</Default>
+					<Name name="local:in2">analog input 1</Name>
+				</Parameter>
+        <Parameter ParameterId="1002" type="std:REAL">
+					<Attributes channel="input"/>
+					<Default>0</Default>
+					<Name name="local:in2">analog input 2</Name>
+				</Parameter>
+        <Parameter ParameterId="1003" type="std:REAL">
+					<Attributes channel="input"/>
+					<Default>0</Default>
+					<Name name="local:in2">analog input 3</Name>
+				</Parameter>
+        <Parameter ParameterId="1004" type="std:REAL">
+					<Attributes channel="input"/>
+					<Default>0</Default>
+					<Name name="local:in2">analog input 4</Name>
+				</Parameter>
+
+				<Parameter ParameterId="2000" type="localTypes:TBYTE">
+					<Attributes channel="output"/>
+					<Default/>
+					<Name name="local:out1">digital outputs</Name>
+				</Parameter>
+				<Parameter ParameterId="2001" type="std:REAL">
+					<Attributes channel="output"/>
+					<Default>0</Default>
+					<Name name="local:out2">analog output 1</Name>
+				</Parameter>
+        <Parameter ParameterId="2002" type="std:REAL">
+					<Attributes channel="output"/>
+					<Default>0</Default>
+					<Name name="local:out2">analog output 2</Name>
+				</Parameter>
+        <Parameter ParameterId="2003" type="std:REAL">
+					<Attributes channel="output"/>
+					<Default>0</Default>
+					<Name name="local:out2">analog output 3</Name>
+				</Parameter>
+        <Parameter ParameterId="2004" type="std:REAL">
+					<Attributes channel="output"/>
+					<Default>0</Default>
+					<Name name="local:out2">analog output 4</Name>
+				</Parameter>
+        
+        
+        <Parameter ParameterId="2100" type="std:DWORD">
+					<Attributes channel="output"/>
+					<Default>0</Default>
+					<Name name="local:errorcode">error code</Name>
+          <Description name="local:Id2100.Desc">every value other than 0 indicates an error.</Description>
+				</Parameter>
+			
+			</HostParameterSet>
+			<DriverInfo needsBusCycle="true">
+				<RequiredLib libname="BO_EPC_IO001" placeholderlib="BO_EPC_IO001" vendor="Janz Tec AG" version="*" identifier="BO_EPC_IO001">
+					<FBInstance basename="$(DeviceName)" fbname="BO_EPC_IO001" fbnamediag="BO_EPC_IO001_Diag">
+						<Initialize methodName="Initialize"/>
+					</FBInstance>
+				</RequiredLib>
+				<Scan supported="true"/>
+			</DriverInfo>
+		</Connector>
+		<ExtendedSettings>
+			<ts:TargetSettings>
+				<ts:section name="deviceconfiguration">
+					<ts:setting name="createBitChannels" type="boolean" access="visible">
+						<ts:value>1</ts:value>
+					</ts:setting>
+				</ts:section>
+				<ts:section name="library-management">
+					<ts:section name="placeholder-libraries">
+						<ts:setting name="BO_EPC_IO001" type="string" access="visible">
+							<ts:value>BO_EPC_IO001, 3.5.11.0 (Janz Tec AG)</ts:value> <!-- Note: Normally this is defined in PLC devdesc! It's only included here to use a default PLC Win Control where placeholder is missing -->
+						</ts:setting>
+					</ts:section>
+				</ts:section>
+			</ts:TargetSettings>
+		</ExtendedSettings>
+		<CompatibleVersions>
+			<Version>3.5.*.*</Version>
+		</CompatibleVersions>
+	</Device>
+</DeviceDescription>
